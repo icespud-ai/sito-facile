@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impianti Ferrari — Idraulico ed elettricista a Brescia</title>
+<meta name="description" content="Impianti Ferrari: interventi idraulici ed elettrici a Brescia e provincia. Preventivo gratuito, interventi urgenti entro 24 ore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F2F5F7;
+    --bg-deep:#12283A;
+    --ink:#152430;
+    --ink-soft:#57697A;
+    --brand:#D97B29;
+    --brand-deep:#B4611C;
+    --accent:#2B6E8C;
+    --line:#DCE4EA;
+    --radius:18px;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:'Work Sans', sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; line-height:1.12; letter-spacing:-.01em; color:var(--ink); margin:0;}
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  ul{margin:0; padding:0; list-style:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--brand-deep); font-weight:700;}
+
+  .topbar{background:var(--bg-deep); color:rgba(255,255,255,.85); font-size:13.5px;}
+  .topbar .wrap{display:flex; justify-content:space-between; padding:9px 28px; flex-wrap:wrap; gap:6px;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .logo{font-family:'Fraunces', serif; font-weight:600; font-size:20px;}
+  .navlinks{display:flex; gap:26px; font-size:15px; font-weight:500;}
+  .navlinks a:hover{color:var(--brand-deep);}
+  .btn{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; padding:12px 22px; border-radius:10px; font-weight:600; font-size:15px; transition:background .2s;}
+  .btn:hover{background:var(--brand-deep);}
+  .btn-ghost{background:transparent; border:1.5px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:#fff;}
+
+  .hero{padding:80px 0 76px; background:linear-gradient(180deg,#fff 0%, var(--bg-soft) 100%);}
+  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+  .hero h1{font-size:46px; margin-top:16px;}
+  .hero p.lead{font-size:17.5px; color:var(--ink-soft); margin-top:18px; max-width:480px;}
+  .hero-ctas{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .hero-visual{background:var(--bg-deep); border-radius:var(--radius); aspect-ratio:4/3; color:#fff; padding:28px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;}
+  .hero-visual::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 75% 15%, rgba(217,123,41,.35), transparent 55%);}
+  .hero-visual .top, .hero-visual .bottom{position:relative; z-index:1;}
+  .hero-visual .big{font-family:'Fraunces', serif; font-size:30px;}
+  .hero-visual .small{font-size:13px; opacity:.7; margin-top:6px;}
+
+  .badges{display:flex; gap:28px; margin-top:34px; flex-wrap:wrap;}
+  .badge-item{font-size:13.5px; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
+  .badge-item::before{content:"✓"; color:var(--accent); font-weight:700;}
+
+  section{padding:76px 0;}
+  .section-head{max-width:560px; margin-bottom:44px;}
+  .section-head h2{font-size:32px; margin-top:12px;}
+  .section-head p{color:var(--ink-soft); margin-top:12px; font-size:16px;}
+
+  .servizi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .card{border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:#fff;}
+  .card h3{font-size:18px; margin-bottom:10px;}
+  .card p{color:var(--ink-soft); font-size:14.5px;}
+
+  .zone{background:var(--bg-soft);}
+  .zone-grid{display:flex; flex-wrap:wrap; gap:12px;}
+  .zone-chip{background:#fff; border:1px solid var(--line); border-radius:999px; padding:9px 18px; font-size:14px; font-weight:500;}
+
+  .reviews-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .review{border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+  .review .stars{color:var(--brand); font-size:14px; margin-bottom:12px;}
+  .review p{font-size:14.5px; color:var(--ink-soft); font-style:italic;}
+  .review .who{margin-top:14px; font-size:13.5px; font-weight:600; font-style:normal; color:var(--ink);}
+
+  .cta-strip{background:var(--bg-deep); color:#fff;}
+  .cta-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;}
+  .cta-inner h2{color:#fff; font-size:28px;}
+  .cta-inner p{color:rgba(255,255,255,.65); margin-top:8px; font-size:15px;}
+
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .contact-info div{margin-bottom:16px; font-size:15px;}
+  .contact-info b{display:block; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--brand-deep); margin-bottom:4px;}
+  .form-box{border:1px solid var(--line); border-radius:var(--radius); padding:30px; background:var(--bg-soft);}
+  .form-row{margin-bottom:14px;}
+  label{font-size:13px; font-weight:600; display:block; margin-bottom:6px;}
+  input, textarea{width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--line); font-family:inherit; font-size:14px; background:#fff;}
+  textarea{resize:vertical; min-height:80px;}
+  .form-box .btn{width:100%; justify-content:center; margin-top:6px;}
+
+  footer{padding:36px 0; border-top:1px solid var(--line);}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; font-size:14px; color:var(--ink-soft); flex-wrap:wrap; gap:14px;}
+
+  .demo-tag{position:fixed; bottom:18px; right:18px; background:var(--ink); color:#fff; font-size:12px; padding:8px 14px; border-radius:999px; z-index:100; opacity:.85;}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;}
+    .servizi-grid, .reviews-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .cta-inner{text-align:left;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-tag">Sito dimostrativo — Vetrina Digitale</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Interventi urgenti entro 24 ore — anche nel weekend</div>
+    <div>Tel. 030 111 2222</div>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">Impianti Ferrari</div>
+    <div class="navlinks">
+      <a href="#servizi">Servizi</a>
+      <a href="#zona">Zona servita</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a href="#contatti" class="btn">Richiedi preventivo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Idraulico ed elettricista a Brescia</div>
+      <h1>Interventi rapidi, preventivo sempre chiaro.</h1>
+      <p class="lead">Riparazioni, installazioni e manutenzioni idrauliche ed elettriche per privati e aziende. Oltre 15 anni di esperienza a Brescia e provincia.</p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn">Richiedi preventivo gratuito</a>
+        <a href="tel:0301112222" class="btn btn-ghost">Chiama ora</a>
+      </div>
+      <div class="badges">
+        <div class="badge-item">Preventivo gratuito</div>
+        <div class="badge-item">Interventi urgenti 24h</div>
+        <div class="badge-item">Garanzia sui lavori</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="top"><div class="eyebrow" style="color:#fff; opacity:.7;">Emergenza?</div></div>
+      <div class="bottom">
+        <div class="big">030 111 2222</div>
+        <div class="small">Rispondiamo anche fuori orario per urgenze</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servizi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Servizi</div>
+      <h2>Cosa facciamo</h2>
+      <p>Interventi su impianti idraulici ed elettrici, per la casa e per l'attività.</p>
+    </div>
+    <div class="servizi-grid">
+      <div class="card"><h3>Idraulica</h3><p>Riparazione perdite, sostituzione sanitari, sblocco scarichi, installazione caldaie e scaldabagni.</p></div>
+      <div class="card"><h3>Elettricità</h3><p>Impianti a norma, quadri elettrici, illuminazione, messa a terra e verifiche di sicurezza.</p></div>
+      <div class="card"><h3>Emergenze 24h</h3><p>Perdite improvvise, blackout, guasti urgenti: interveniamo anche nel weekend.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="zona" class="zone">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Zona servita</div>
+      <h2>Dove interveniamo</h2>
+      <p>Copriamo Brescia città e i comuni della prima cintura.</p>
+    </div>
+    <div class="zone-grid">
+      <div class="zone-chip">Brescia città</div>
+      <div class="zone-chip">Rezzato</div>
+      <div class="zone-chip">Concesio</div>
+      <div class="zone-chip">Bovezzo</div>
+      <div class="zone-chip">Cellatica</div>
+      <div class="zone-chip">Collebeato</div>
+      <div class="zone-chip">San Zeno Naviglio</div>
+      <div class="zone-chip">Roncadelle</div>
+    </div>
+  </div>
+</section>
+
+<section id="recensioni">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Recensioni</div>
+      <h2>Cosa dicono i clienti</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review"><div class="stars">★★★★★</div><p>"Intervento rapido per una perdita in cucina, prezzo esattamente come da preventivo."</p><div class="who">— Cliente a Brescia</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Hanno rifatto l'impianto elettrico del negozio senza fermare l'attività. Puntuali e precisi."</p><div class="who">— Cliente a Rezzato</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Chiamati di domenica per un'emergenza, sono arrivati in meno di un'ora."</p><div class="who">— Cliente a Concesio</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Hai un problema urgente?</h2>
+      <p>Chiamaci direttamente: rispondiamo subito, anche fuori orario.</p>
+    </div>
+    <a href="tel:0301112222" class="btn">Chiama 030 111 2222</a>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="section-head" style="margin-bottom:26px;">
+        <div class="eyebrow">Contatti</div>
+        <h2>Richiedi un preventivo</h2>
+      </div>
+      <div><b>Telefono</b>030 111 2222</div>
+      <div><b>Email</b>info@impiantiferrari-demo.it</div>
+      <div><b>Zona</b>Brescia e provincia</div>
+      <div><b>Orari</b>Lun–Ven 8:00–18:00, urgenze 24h</div>
+    </div>
+    <div class="form-box">
+      <div class="form-row"><label>Nome e cognome</label><input placeholder="Il tuo nome"></div>
+      <div class="form-row"><label>Telefono</label><input placeholder="Il tuo numero"></div>
+      <div class="form-row"><label>Descrivi il problema</label><textarea placeholder="Es. perdita sotto il lavello, urgente"></textarea></div>
+      <button type="button" class="btn">Invia richiesta</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Impianti Ferrari — Brescia</div>
+    <div>Sito dimostrativo realizzato da Vetrina Digitale</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vetrina Digitale — Siti web per attività di Brescia</title>
+<meta name="description" content="Vetrina Digitale: siti web professionali per ristoranti, artigiani e professionisti a Brescia e provincia. Online in pochi giorni, prezzi chiari.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F6F4EF;
+    --bg-deep:#1B1B2F;
+    --ink:#1C1C22;
+    --ink-soft:#5B5B66;
+    --brand:#B23A2E;
+    --brand-deep:#8C2C22;
+    --accent:#2B7A6B;
+    --line:#E7E3D8;
+    --radius:20px;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brand);
+    font-weight:600;
+  }
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:21px;
+  }
+  .logo span{color:var(--brand);}
+  .navlinks{display:flex; gap:28px; font-size:15px; font-weight:500;}
+  .navlinks a:hover{color:var(--brand);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--brand);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    transition:background .2s;
+  }
+  .btn:hover{background:var(--brand-deep);}
+  .btn-outline{
+    background:transparent;
+    border:1.5px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn-outline:hover{background:var(--ink); color:#fff;}
+
+  /* HERO */
+  .hero{
+    padding:100px 0 90px;
+    background:linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;
+  }
+  .hero h1{font-size:52px; margin-top:18px;}
+  .hero p.lead{font-size:19px; color:var(--ink-soft); margin-top:22px; max-width:520px;}
+  .hero-ctas{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .hero-visual{
+    background:var(--bg-deep);
+    border-radius:var(--radius);
+    aspect-ratio:4/3;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    color:#fff; text-align:center; padding:30px;
+    position:relative; overflow:hidden;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 20%, rgba(178,58,46,.35), transparent 60%);
+  }
+  .hero-visual .tag{
+    font-family:'Fraunces', serif; font-size:26px; position:relative; z-index:1;
+  }
+  .hero-visual .sub{font-size:14px; opacity:.7; margin-top:10px; position:relative; z-index:1;}
+  .stats{display:flex; gap:36px; margin-top:40px; flex-wrap:wrap;}
+  .stat b{font-family:'Fraunces', serif; font-size:28px; display:block;}
+  .stat span{font-size:13px; color:var(--ink-soft);}
+
+  section{padding:86px 0;}
+  .section-head{max-width:600px; margin-bottom:50px;}
+  .section-head h2{font-size:36px; margin-top:14px;}
+  .section-head p{color:var(--ink-soft); font-size:17px; margin-top:14px;}
+
+  /* SERVIZI */
+  .servizi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 28px;
+    background:var(--bg-soft);
+  }
+  .card .num{
+    width:40px; height:40px; border-radius:50%;
+    background:var(--brand); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:600; font-size:16px;
+    margin-bottom:20px;
+  }
+  .card h3{font-size:20px; margin-bottom:10px;}
+  .card p{color:var(--ink-soft); font-size:15px;}
+
+  /* COME FUNZIONA */
+  .steps{background:var(--bg-deep); color:#fff;}
+  .steps .section-head h2{color:#fff;}
+  .steps .section-head p{color:rgba(255,255,255,.65);}
+  .steps-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .step{border-left:2px solid rgba(255,255,255,.2); padding-left:20px;}
+  .step .num{font-family:'Fraunces', serif; font-size:32px; color:var(--brand); opacity:.9;}
+  .step h3{color:#fff; font-size:17px; margin:12px 0 8px;}
+  .step p{color:rgba(255,255,255,.6); font-size:14px;}
+
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  .pf-card{
+    border-radius:var(--radius); overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .pf-thumb{
+    aspect-ratio:16/10;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Fraunces', serif; font-size:24px; text-align:center; padding:24px;
+  }
+  .pf-thumb.a{background:linear-gradient(135deg,#8C2C22,#B23A2E);}
+  .pf-thumb.b{background:linear-gradient(135deg,#1F4A40,#2B7A6B);}
+  .pf-body{padding:22px 24px;}
+  .pf-body .eyebrow{margin-bottom:6px;}
+  .pf-body h3{font-size:19px; margin-bottom:8px;}
+  .pf-body p{color:var(--ink-soft); font-size:14.5px; margin-bottom:14px;}
+  .pf-link{font-weight:600; font-size:14px; color:var(--brand);}
+  .pf-note{
+    margin-top:22px; padding:16px 20px; background:var(--bg-soft);
+    border-radius:14px; font-size:14px; color:var(--ink-soft);
+  }
+
+  /* PREZZI */
+  .prezzi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .price-card{
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:34px 28px; display:flex; flex-direction:column;
+  }
+  .price-card.highlight{
+    background:var(--bg-deep); color:#fff; border-color:var(--bg-deep);
+    transform:translateY(-8px);
+  }
+  .price-card.highlight .ink-soft{color:rgba(255,255,255,.65) !important;}
+  .price-card h3{font-size:19px;}
+  .price-card .price{font-family:'Fraunces', serif; font-size:38px; margin:16px 0 4px;}
+  .price-card .price-note{font-size:13px; color:var(--ink-soft); margin-bottom:22px;}
+  .price-card.highlight .price-note{color:rgba(255,255,255,.6);}
+  .price-card ul{margin-bottom:26px; flex:1;}
+  .price-card li{
+    font-size:14.5px; padding:9px 0; border-top:1px solid var(--line);
+    display:flex; gap:10px;
+  }
+  .price-card.highlight li{border-color:rgba(255,255,255,.15);}
+  .price-card li::before{content:"✓"; color:var(--accent); font-weight:700;}
+  .price-card.highlight li::before{color:#E3A857;}
+  .badge{
+    display:inline-block; background:var(--brand); color:#fff;
+    font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 10px; border-radius:999px; margin-bottom:14px; align-self:flex-start;
+  }
+
+  /* CONTATTI */
+  .contact{background:var(--bg-soft);}
+  .contact-box{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:50px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:30px;
+  }
+  .contact-box h2{font-size:30px;}
+  .contact-box p{color:var(--ink-soft); margin-top:12px; font-size:16px;}
+  .contact-details{margin-top:18px; font-size:15px;}
+  .contact-details div{margin-bottom:6px;}
+  .contact-details b{font-weight:600;}
+
+  footer{padding:40px 0; border-top:1px solid var(--line);}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; font-size:14px; color:var(--ink-soft); flex-wrap:wrap; gap:14px;}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .servizi-grid, .steps-grid, .portfolio-grid, .prezzi-grid{grid-template-columns:1fr;}
+    .price-card.highlight{transform:none;}
+    .contact-box{grid-template-columns:1fr; text-align:left;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">Vetrina <span>Digitale</span></div>
+    <div class="navlinks">
+      <a href="#servizi">Servizi</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#prezzi">Prezzi</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a href="#contatti" class="btn">Richiedi preventivo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Siti web per attività di Brescia</div>
+      <h1>La tua attività, online, fatta bene.</h1>
+      <p class="lead">Costruiamo siti web professionali per ristoranti, artigiani e studi professionali di Brescia e provincia. Pronti in pochi giorni, senza abbonamenti nascosti né gergo tecnico.</p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn">Richiedi un preventivo gratuito</a>
+        <a href="#portfolio" class="btn btn-outline">Vedi alcuni esempi</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>3–10 gg</b><span>per il primo sito online</span></div>
+        <div class="stat"><b>100%</b><span>ottimizzato per mobile</span></div>
+        <div class="stat"><b>0</b><span>sorprese sul prezzo</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="tag">"Finalmente si trova su Google"</div>
+      <div class="sub">— l'obiettivo di ogni sito che facciamo</div>
+    </div>
+  </div>
+</section>
+
+<section id="servizi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cosa facciamo</div>
+      <h2>Tre modi per portarti online</h2>
+      <p>Non vendiamo pacchetti standard: partiamo da quello che serve davvero alla tua attività.</p>
+    </div>
+    <div class="servizi-grid">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Sito vetrina</h3>
+        <p>Un sito professionale con chi sei, cosa offri, dove sei e come contattarti. Perfetto per farsi trovare su Google e apparire affidabili.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Prenotazioni &amp; moduli</h3>
+        <p>Prenotazione tavoli o appuntamenti, moduli di contatto, integrazione con WhatsApp: il sito lavora anche mentre sei chiuso.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Manutenzione continua</h3>
+        <p>Aggiornamenti di menu, orari, foto e testi quando servono, senza che tu debba toccare una riga di codice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Come funziona</div>
+      <h2>Dal primo contatto al sito online</h2>
+      <p>Un percorso semplice, pensato per chi non ha tempo da perdere con la tecnologia.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Chiacchierata iniziale</h3>
+        <p>Ci raccontiamo cosa fai e cosa ti serve. Nessun impegno, nessun costo.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Preventivo chiaro</h3>
+        <p>Un prezzo fisso, scritto nero su bianco, prima di iniziare qualsiasi lavoro.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Realizzazione</h3>
+        <p>Costruiamo il sito e te lo mostriamo per revisioni, fino a quando è esattamente come lo vuoi.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h3>Online e assistenza</h3>
+        <p>Pubblichiamo il sito e restiamo disponibili per modifiche e aggiornamenti futuri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Alcuni esempi del nostro lavoro</h2>
+      <p>Progetti dimostrativi che mostrano stile e cura per due tipi di attività molto comuni a Brescia.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="pf-card">
+        <div class="pf-thumb a">Trattoria del Borgo</div>
+        <div class="pf-body">
+          <div class="eyebrow">Ristorazione</div>
+          <h3>Sito per ristorante con menu e prenotazioni</h3>
+          <p>Menu digitale, galleria, orari e sistema di prenotazione tavolo pensato per attività di ristorazione locali.</p>
+          <a href="../portfolio-demo/ristorante-demo/index.html" class="pf-link">Guarda la demo →</a>
+        </div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-thumb b">Impianti Ferrari</div>
+        <div class="pf-body">
+          <div class="eyebrow">Artigiani &amp; professionisti</div>
+          <h3>Sito per idraulico con richiesta preventivo</h3>
+          <p>Presentazione servizi, zone coperte, recensioni clienti e modulo per richiedere un preventivo veloce.</p>
+          <a href="../portfolio-demo/artigiano-demo/index.html" class="pf-link">Guarda la demo →</a>
+        </div>
+      </div>
+    </div>
+    <div class="pf-note">Lavoriamo anche con pensioni, negozi, palestre e studi professionali — questi due esempi mostrano lo stile, non i limiti di quello che possiamo fare.</div>
+  </div>
+</section>
+
+<section id="prezzi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Prezzi</div>
+      <h2>Prezzo chiaro, senza sorprese</h2>
+      <p>Ogni progetto è diverso: questi sono i punti di partenza più comuni. Il preventivo finale è sempre concordato prima di iniziare.</p>
+    </div>
+    <div class="prezzi-grid">
+      <div class="price-card">
+        <h3>Sito Essenziale</h3>
+        <div class="price">da 500 €</div>
+        <div class="price-note">una tantum</div>
+        <ul>
+          <li>Sito a una pagina</li>
+          <li>Design su misura</li>
+          <li>Ottimizzato per mobile</li>
+          <li>Modulo contatti</li>
+          <li>Consegna in 3–5 giorni</li>
+        </ul>
+        <a href="#contatti" class="btn btn-outline">Richiedi preventivo</a>
+      </div>
+      <div class="price-card highlight">
+        <div class="badge">Più richiesto</div>
+        <h3>Sito Completo</h3>
+        <div class="price">da 1.200 €</div>
+        <div class="price-note">una tantum</div>
+        <ul>
+          <li>Fino a 5 pagine</li>
+          <li>Prenotazioni o moduli avanzati</li>
+          <li>Galleria foto e mappa</li>
+          <li>Ottimizzazione SEO di base</li>
+          <li>Consegna in 7–10 giorni</li>
+        </ul>
+        <a href="#contatti" class="btn">Richiedi preventivo</a>
+      </div>
+      <div class="price-card">
+        <h3>Manutenzione</h3>
+        <div class="price">da 50 €</div>
+        <div class="price-note">al mese</div>
+        <ul>
+          <li>Aggiornamenti testi e foto</li>
+          <li>Hosting e dominio inclusi</li>
+          <li>Piccole modifiche continue</li>
+          <li>Assistenza prioritaria</li>
+        </ul>
+        <a href="#contatti" class="btn btn-outline">Richiedi preventivo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Parliamo della tua attività</h2>
+        <p>Scrivici per una chiacchierata gratuita, senza impegno. Rispondiamo di solito entro un giorno lavorativo.</p>
+        <div class="contact-details">
+          <div><b>Email:</b> info@vetrinadigitale.it</div>
+          <div><b>Zona:</b> Brescia e provincia</div>
+        </div>
+      </div>
+      <a href="mailto:info@vetrinadigitale.it" class="btn">Scrivi ora</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Vetrina Digitale — Siti web per attività locali a Brescia</div>
+    <div>P.IVA da definire</div>
+  </div>
+</footer>
+
+</body>
+</html>
